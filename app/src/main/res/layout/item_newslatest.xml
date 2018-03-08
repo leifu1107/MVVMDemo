@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+
+        <variable
+            name="newslatestbean"
+            type="leifu.mvvmdemo.bean.NewsLatestBean.StoriesBean"/>
+
+        <variable
+            name="myhandle"
+            type="leifu.mvvmdemo.MyHandlers"/>
+
+        <variable
+            name="url"
+            type="String"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/m1"
+        android:background="@color/white"
+        android:onClick="@{myhandle::onClickFriend}"
+        android:orientation="horizontal"
+        android:padding="@dimen/m10">
+
+        <ImageView
+            android:id="@+id/iv_news"
+            android:layout_width="@dimen/m80"
+            app:error="@{@drawable/def_empty}"
+            app:imageUrl="@{url}"
+            android:layout_height="@dimen/m80"/>
+
+        <TextView
+            android:id="@+id/tv_news"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{myhandle::onItemClickFriend}"
+            android:padding="@dimen/m15"
+            android:text="@{newslatestbean.title}"/>
+
+    </LinearLayout>
+</layout>

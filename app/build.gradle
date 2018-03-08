@@ -1,0 +1,83 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
+    defaultConfig {
+        applicationId "leifu.mvvmdemo"
+        minSdkVersion 19
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.+'
+    testCompile 'junit:junit:4.12'
+    //banner图,引导页等
+    compile 'cn.bingoogolapple:bga-banner:2.2.4@aar'
+    //内存泄漏
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+    //日志打印
+    compile 'com.orhanobut:logger:1.15'
+    //沉浸式
+    compile 'com.gyf.barlibrary:barlibrary:2.3.0'
+    //RecyclerViewAdapter帮助类
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    //分割线
+    compile 'com.yqritc:recyclerview-flexibledivider:1.4.0'
+    //运行时权限
+    //    compile 'pub.devrel:easypermissions:1.1.3'
+//    compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
+    compile 'com.yanzhenjie:permission:2.0.0-rc2'
+    //glide图片加载
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'jp.wasabeef:glide-transformations:2.0.1'
+    //eventbus订阅——发布模式
+    compile 'org.greenrobot:eventbus:3.0.0'
+    //TabLayout的封装
+    compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
+    //底部导航
+    compile 'com.github.ittianyu:BottomNavigationViewEx:1.2.4'
+    //材料设计
+    compile 'com.android.support:design:25.+'
+    //网络请求
+    compile 'com.lzy.net:okgo:3.0.4'
+    //shape,textview的封装
+    compile 'com.github.lygttpod:SuperTextView:2.1.6'
+    //多布局状态
+    compile 'com.classic.common:multiple-status-view:1.4'
+    //fragment嵌套问题
+    compile 'me.yokeyword:fragmentation:1.2.5'
+    //webview交互
+    compile 'com.just.agentweb:agentweb:3.1.0'
+    //自定义toast
+    compile 'com.github.leifu1107:CustomToast:1.0'
+    //播放gif
+    compile 'pl.droidsonroids.gif:android-gif-drawable:1.2.10'
+    compile 'com.google.code.gson:gson:2.2.4'
+    //下拉刷新
+    compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5-alpha-3'
+    //换肤
+    compile 'skin.support:skin-support:2.2.3'
+    //PopupWindow
+    compile 'com.github.pinguo-zhouwei:CustomPopwindow:2.1.1'
+    //二维码
+    compile 'cn.bingoogolapple:bga-qrcode-zxing:1.2.1'
+}
